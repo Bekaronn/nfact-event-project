@@ -1,0 +1,32 @@
+<div class="box">
+  <div class="container">
+    <div class="header-left-side">
+      <div class="header-title" routerLink="/home">
+        Booking event
+      </div>
+      <div class="header-links">
+        <ul>
+          <li><a routerLink='/home'>Главная</a></li>
+          <li><a routerLink='/event'>Мероприятий</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="header-right-side">
+      <ng-container *ngIf="userService.isAuthenticated(); else loginButton">
+        <div class="profile-icon-container">
+          <button (click)="toggleMenu()" class="profile-icon">
+            <img src="assets/profile_icon.svg" class="svg-photo">
+          </button>
+          <div class="menu" *ngIf="isMenuOpen">
+            <button [routerLink]="['/profile']">Профиль</button>
+            <button [routerLink]="['/profile']">Заказы</button>
+            <button (click)="logout()">Выйти</button>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #loginButton>
+        <button [routerLink]="['/login']" class="login">Войти</button>
+      </ng-template>
+    </div>
+  </div>
+</div>

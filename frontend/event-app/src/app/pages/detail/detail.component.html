@@ -1,0 +1,41 @@
+<div class="container" *ngIf="event != null">
+  <div class="image-section">
+    <img [src]="event.image" alt="фото">
+  </div>
+  <div class="information-section">
+    <h1 class="title">
+      {{event.title}}
+    </h1>
+    <div class="inner-information-section">
+      <div class="left-side">
+        <p class="st">Описание</p>
+        <p class="description" [ngClass]="{'read': isMoreText}">
+          {{event.description}}
+        </p>
+        <p class="more">
+          <a (click)="toggleMoreText()">{{moreText}}</a>
+        </p>
+        <div>
+          <button (click)="toggleOverlay()">Купить билет</button>
+        </div>
+      </div>
+      <div class="right-side">
+        <p class="st">МЕСТО ПРОВЕДЕНИЕ</p>
+        <p>{{event.location}}</p>
+        <p class="st">ДАТА</p>
+        <p>{{event.date_time | date: 'd MMMM, y' }}</p>
+        <p class="st">НАЧАЛО</p>
+        <p>{{event.date_time | date: 'HH:mm' }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" *ngIf="showOverlay">
+  <div class="booking-page">
+    <button (click)="toggleOverlay()">X</button>
+    <div>
+      <button (click)="createBooking()">Book Event</button>
+    </div>
+  </div>
+</div>

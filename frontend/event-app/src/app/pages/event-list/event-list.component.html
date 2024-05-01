@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="event-list">
+    <div class="event" *ngFor="let event of events" [routerLink]="[event.id]">
+      <img [src]="event.image" alt="фото">
+      <div class="text">
+        <p class="time">{{ event.date_time | date: 'd MMMM, HH:mm' }}</p>
+        <p class="title">{{event.title}}</p>
+        <p class="location">{{event.location}}</p>
+      </div>
+    </div>
+  </div>
+</div>

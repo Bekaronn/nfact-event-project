@@ -1,0 +1,86 @@
+.container {
+  width: 90%;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .header-left-side {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header-links{
+      margin-left: 45px;
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      li {
+        list-style: none;
+        a {
+          text-decoration: none;
+          font-size: 23px;
+          margin-left: 58px;
+          color: #3373AF;
+        }
+      }
+    }
+    .header-title {
+      font-family: "Comfortaa", sans-serif;
+      font-size: 44px;
+      margin-right: 25px;
+      cursor: pointer;
+    }
+  }
+  .header-right-side{
+    .login{
+      color: #3373AF;
+      font-size: 15px;
+      padding: 11px 40px;
+      background-color: white;
+      border-radius: 6px;
+      border: #3373AF 1px solid;
+      cursor: pointer;
+    }
+    .profile-icon{
+      color: #3373AF;
+      width: 50px;
+      height: 50px;
+      font-size: 15px;
+      background-color: white;
+      border-radius: 10px;
+      border: #3373AF 1px solid;
+      cursor: pointer;
+      object-fit: contain;
+    }
+  }
+}
+
+.menu {
+  display: block;
+  position: fixed;
+  top: 60px;
+  right: 12vh;
+  width: 120px;
+  height: 125px;
+  z-index: 9999;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 0;
+}
+
+.menu button {
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  padding: 8px 16px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background-color: #f0f0f0;
+}
+

@@ -1,0 +1,20 @@
+<ng-container *ngIf="userService.isAuthenticated(); else notLoggedIn">
+  <div class="container">
+    <div class="profile">
+      <p>Ваш профиль: </p>
+      <img [src]="profile_picture ? profile.profile_picture : 'assets/profile.png'" alt="фото"
+      class="profile-icon">
+      <form (ngSubmit)="submitUpdateProfile()">
+        <div class="form-group-1">
+          <label>ФИО: </label>
+          <input type="text" class="form-control" id="bio" name="bio" [(ngModel)]="bio"
+                 required placeholder="Введите ваше ФИО">
+        </div>
+        <button type="submit" class="btn btn-primary">Применить</button>
+      </form>
+    </div>
+  </div>
+</ng-container>
+<ng-template #notLoggedIn>
+  <button [routerLink]="['/login']">Войти</button>
+</ng-template>

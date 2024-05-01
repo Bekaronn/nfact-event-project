@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="login">
+    <p>Войти в аккаунт</p>
+    <form (ngSubmit)="onSubmit()">
+      <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username"
+             required placeholder="Логин Пользователя">
+      <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password"
+             required placeholder="Пароль">
+      <button type="submit" class="btn btn-primary">Войти</button>
+    </form>
+    <a routerLink="/register">Регистрация</a>
+  </div>
+</div>
