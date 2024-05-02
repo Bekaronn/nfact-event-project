@@ -1,0 +1,31 @@
+.container {
+  margin: 80px;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .bookings {
+    margin-top: 30px;
+    margin-bottom: 70px;
+    box-sizing: border-box;
+    width: 600px;
+    height: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+
+    p {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
+      color: #000000;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+    a{
+      font-weight: 400;
+      font-size: 15px;
+      color: #3373AF;
+    }
+  }
+}

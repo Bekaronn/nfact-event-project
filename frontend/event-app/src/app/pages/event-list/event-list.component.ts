@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { EventService } from "../../services/event.service";
 import {HttpClientModule} from "@angular/common/http";
 import {CommonModule, NgForOf} from "@angular/common";
@@ -17,7 +17,7 @@ import {RouterLink} from "@angular/router";
   templateUrl: './event-list.component.html',
   styleUrl: './event-list.component.css'
 })
-export class EventListComponent {
+export class EventListComponent implements OnInit{
   events: Event[] = [];
 
   constructor(private eventService: EventService) { }

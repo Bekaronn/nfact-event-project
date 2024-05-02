@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Booking} from "../model/booking.model";
 import {UserService} from "./user.service";
+import {Event} from "../model/event.model";
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,13 @@ export class BookingService {
       event: eventId
     };
     return this.http.post(this.apiUrl, body, { headers: headers });
+  }
+
+  getBooking(): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `token ${this.userService.getToken()}`
+    });
+    return this.http.get(this.apiUrl, { headers: headers });
   }
 }
